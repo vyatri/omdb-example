@@ -62,7 +62,8 @@ class MasterViewController: UIViewController, MasterDisplayLogic
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
   
   func doSomething()
   {

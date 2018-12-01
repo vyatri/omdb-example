@@ -164,6 +164,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="kMV-Za-Jcw"/>
+                    <connections>
+                        <outlet property="searchBar" destination="dEy-vJ-Fvg" id="vYZ-fP-AiK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
