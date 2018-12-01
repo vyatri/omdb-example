@@ -38,7 +38,7 @@ class MasterInteractor: MasterBusinessLogic, MasterDataStore
     
     worker = OMDBWorker()
     worker?.doSearch(keyword ?? "", page: page, completion: { (results) in
-        self.presenter?.presentData(results)
+        self.presenter?.presentData(results, atPage: page)
     })
   }
 }

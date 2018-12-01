@@ -14,14 +14,14 @@ import UIKit
 
 protocol MasterPresentationLogic
 {
-    func presentData(_ results: FilmList?)
+    func presentData(_ results: FilmList?, atPage: Int)
 }
 
 class MasterPresenter: MasterPresentationLogic
 {
   weak var viewController: MasterDisplayLogic?
   
-    func presentData(_ results: FilmList?) {
-        viewController?.displayData(results)
+    func presentData(_ results: FilmList?, atPage: Int) {
+        viewController?.displayData(results, atPage: atPage)
     }
 }

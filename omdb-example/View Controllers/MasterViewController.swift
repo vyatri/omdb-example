@@ -14,7 +14,7 @@ import UIKit
 
 protocol MasterDisplayLogic: class
 {
-    func displayData(_ results: FilmList?)
+    func displayData(_ results: FilmList?, atPage: Int)
 }
 
 class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -66,11 +66,28 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    var searchResults: FilmList!
+    var searchResults: [Film]!
+    var currentPage: Int!
+    var enableSearchOnScroll: Bool!
     
-    func displayData(_ results: FilmList?) {
-        searchResults = results
-        collectionView.reloadData()
+    func displayData(_ results: FilmList?, atPage: Int = 1) {
+        if (searchResults == nil) {
+            searchResults = results?.Search
+            enableSearchOnScroll = true
+        } else if (results != nil && results!.Search.count > 0){
+            if currentPage == 1{
+                searchResults = results?.Search
+            } else {
+                searchResults += results!.Search
+            }
+            enableSearchOnScroll = true
+        } else if currentPage == 1{
+            searchResults = nil
+        } else {
+            // reached end of page
+        }
+        currentPage = atPage
+        collectionView.reloadDataSmoothly()
     }
     
     // card size for list view
@@ -92,7 +109,9 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
-        interactor?.fetchData(keyword: searchBar.text, page: 1)
+        currentPage = 1
+        enableSearchOnScroll = true
+        interactor?.fetchData(keyword: searchBar.text, page: currentPage ?? 1)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -109,13 +128,13 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
         if searchResults == nil {
             return 0
         } else {
-            return searchResults.Search.count
+            return searchResults.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmcard", for: indexPath) as! FilmCell
-        cell.setData(searchResults.Search[indexPath.item])
+        cell.setData(searchResults[indexPath.item])
         return cell
     }
     
@@ -128,6 +147,17 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
             return landscapeCellSize()
         } else {
             return portraitCellSize()
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard enableSearchOnScroll == true else { return }
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offsetY > contentHeight - scrollView.frame.size.height - 20 {
+            enableSearchOnScroll = false
+            interactor?.fetchData(keyword: searchBar.text, page: (currentPage ?? 1) + 1 )
+            self.collectionView.reloadData()
         }
     }
 }
