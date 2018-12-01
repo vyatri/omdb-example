@@ -18,6 +18,7 @@
 		B22ACB9C21B26C050060C6C2 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9B21B26C050060C6C2 /* Film.swift */; };
 		B22ACB9F21B27B2A0060C6C2 /* OMDBWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9E21B27B2A0060C6C2 /* OMDBWorker.swift */; };
 		B22ACBA221B27BF10060C6C2 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBA121B27BF10060C6C2 /* History.swift */; };
+		B22ACBA521B282450060C6C2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBA421B282450060C6C2 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		B22ACB9B21B26C050060C6C2 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		B22ACB9E21B27B2A0060C6C2 /* OMDBWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBWorker.swift; sourceTree = "<group>"; };
 		B22ACBA121B27BF10060C6C2 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		B22ACBA421B282450060C6C2 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 		B22ACBA321B2821C0060C6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B22ACBA421B282450060C6C2 /* Reachability.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				B22ACB9921B26B960060C6C2 /* MasterPresenter.swift in Sources */,
 				B22ACB9621B24F520060C6C2 /* MasterInteractor.swift in Sources */,
 				B22ACB7821B227A00060C6C2 /* AppDelegate.swift in Sources */,
+				B22ACBA521B282450060C6C2 /* Reachability.swift in Sources */,
 				B22ACB9021B23DB40060C6C2 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
