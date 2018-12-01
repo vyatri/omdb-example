@@ -101,6 +101,10 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            
+        } else {
+            
+        }
     }
 }
