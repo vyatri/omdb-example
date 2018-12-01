@@ -100,6 +100,7 @@
 				B22ACB8E21B23D500060C6C2 /* View Controllers */,
 				B22ACB9121B24EFC0060C6C2 /* Interactors */,
 				B22ACB9721B26B660060C6C2 /* Presenters */,
+				B22ACBAD21B285AD0060C6C2 /* Routers */,
 				B22ACB9A21B26BC40060C6C2 /* Models */,
 				B22ACB9D21B27AD40060C6C2 /* Workers */,
 				B22ACBA321B2821C0060C6C2 /* Classes */,
@@ -167,6 +168,13 @@
 				B22ACBA721B283C70060C6C2 /* FilmCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B22ACBAD21B285AD0060C6C2 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
