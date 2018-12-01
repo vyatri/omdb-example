@@ -29,6 +29,6 @@ class FilmCell: UICollectionViewCell {
         self.imageView.kf.setImage(with: film.Poster)
         self.titleLabel.text = film.Title
         self.yearLabel.text = film.Year
-        self.categoryLabel.text = film.Category.rawValue
+        self.categoryLabel.text = film.Category.rawValue.capitalized
     }
 }
