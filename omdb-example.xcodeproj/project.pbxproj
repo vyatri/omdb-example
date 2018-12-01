@@ -94,6 +94,7 @@
 				B22ACB8E21B23D500060C6C2 /* View Controllers */,
 				B22ACB9121B24EFC0060C6C2 /* Interactors */,
 				B22ACB9721B26B660060C6C2 /* Presenters */,
+				B22ACB9A21B26BC40060C6C2 /* Models */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
@@ -124,6 +125,13 @@
 				B22ACB9821B26B960060C6C2 /* MasterPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		B22ACB9A21B26BC40060C6C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
