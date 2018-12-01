@@ -17,7 +17,7 @@ protocol MasterDisplayLogic: class
   
 }
 
-class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate
+class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
   var interactor: MasterBusinessLogic?
   var router: (NSObjectProtocol & MasterRoutingLogic & MasterDataPassing)?
@@ -83,6 +83,24 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    // MARK: - UICollectionView delegate, datasource, and flowlayout
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
     }
 }
