@@ -17,6 +17,7 @@
 		B22ACB9921B26B960060C6C2 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9821B26B960060C6C2 /* MasterPresenter.swift */; };
 		B22ACB9C21B26C050060C6C2 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9B21B26C050060C6C2 /* Film.swift */; };
 		B22ACB9F21B27B2A0060C6C2 /* OMDBWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9E21B27B2A0060C6C2 /* OMDBWorker.swift */; };
+		B22ACBA221B27BF10060C6C2 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBA121B27BF10060C6C2 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		B22ACB9821B26B960060C6C2 /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
 		B22ACB9B21B26C050060C6C2 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		B22ACB9E21B27B2A0060C6C2 /* OMDBWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBWorker.swift; sourceTree = "<group>"; };
+		B22ACBA121B27BF10060C6C2 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B22ACB9B21B26C050060C6C2 /* Film.swift */,
+				B22ACBA121B27BF10060C6C2 /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			files = (
 				B22ACB9C21B26C050060C6C2 /* Film.swift in Sources */,
 				B22ACB9F21B27B2A0060C6C2 /* OMDBWorker.swift in Sources */,
+				B22ACBA221B27BF10060C6C2 /* History.swift in Sources */,
 				B22ACB9921B26B960060C6C2 /* MasterPresenter.swift in Sources */,
 				B22ACB9621B24F520060C6C2 /* MasterInteractor.swift in Sources */,
 				B22ACB7821B227A00060C6C2 /* AppDelegate.swift in Sources */,
