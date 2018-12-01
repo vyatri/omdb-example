@@ -107,6 +107,7 @@
 				B22ACB9D21B27AD40060C6C2 /* Workers */,
 				B22ACBA321B2821C0060C6C2 /* Classes */,
 				B22ACBA621B282D90060C6C2 /* Views */,
+				B22ACBC321B357840060C6C2 /* Extensions */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
@@ -178,6 +179,13 @@
 				B22ACBB121B2861E0060C6C2 /* MasterRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		B22ACBC321B357840060C6C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
