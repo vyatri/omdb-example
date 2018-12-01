@@ -98,6 +98,7 @@
 				B22ACB9721B26B660060C6C2 /* Presenters */,
 				B22ACB9A21B26BC40060C6C2 /* Models */,
 				B22ACB9D21B27AD40060C6C2 /* Workers */,
+				B22ACBA321B2821C0060C6C2 /* Classes */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
@@ -145,6 +146,13 @@
 				B22ACB9E21B27B2A0060C6C2 /* OMDBWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		B22ACBA321B2821C0060C6C2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
