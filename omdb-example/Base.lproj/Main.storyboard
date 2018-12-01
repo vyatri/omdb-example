@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dEy-vJ-Fvg">
-                                <rect key="frame" x="0.0" y="64" width="83" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CQB-u1-F7E">
@@ -45,7 +45,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-d7-TOR">
                                                             <rect key="frame" x="0.0" y="0.0" width="344" height="88"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-El-SJc">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-El-SJc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="88"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Knw-El-SJc" secondAttribute="height" multiplier="8:11" id="1dA-t5-eQ2"/>
