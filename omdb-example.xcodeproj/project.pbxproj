@@ -12,8 +12,6 @@
 		B22ACB7D21B227A00060C6C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22ACB7B21B227A00060C6C2 /* Main.storyboard */; };
 		B22ACB7F21B227A10060C6C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22ACB7E21B227A10060C6C2 /* Assets.xcassets */; };
 		B22ACB8221B227A10060C6C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */; };
-		B22ACB8A21B238E70060C6C2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22ACB8921B238E70060C6C2 /* Realm.framework */; };
-		B22ACB8C21B238EB0060C6C2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22ACB8B21B238EB0060C6C2 /* RealmSwift.framework */; };
 		B22ACB9021B23DB40060C6C2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB8F21B23DB40060C6C2 /* MasterViewController.swift */; };
 		B22ACB9621B24F520060C6C2 /* MasterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9521B24F520060C6C2 /* MasterInteractor.swift */; };
 		B22ACB9921B26B960060C6C2 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9821B26B960060C6C2 /* MasterPresenter.swift */; };
@@ -44,8 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43238F5D355A5D91FA4327ED /* Pods_omdb_example.framework in Frameworks */,
-				B22ACB8A21B238E70060C6C2 /* Realm.framework in Frameworks */,
-				B22ACB8C21B238EB0060C6C2 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +146,6 @@
 				B22ACB7221B2279F0060C6C2 /* Resources */,
 				305FA95A5C05075C512A0CB6 /* [CP] Embed Pods Frameworks */,
 				D4A29A1980B5BC602F80603C /* [CP] Copy Pods Resources */,
-				B22ACB8D21B2390E0060C6C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -216,34 +211,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		B22ACB8D21B2390E0060C6C2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		D4A29A1980B5BC602F80603C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -444,10 +424,7 @@
 				);
 				INFOPLIST_FILE = "omdb-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wordpress.vyatri.omdb-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -468,10 +445,7 @@
 				);
 				INFOPLIST_FILE = "omdb-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wordpress.vyatri.omdb-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
