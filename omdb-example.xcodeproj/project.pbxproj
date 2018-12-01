@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43238F5D355A5D91FA4327ED /* Pods_omdb_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */; };
 		B22ACB7821B227A00060C6C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB7721B227A00060C6C2 /* AppDelegate.swift */; };
 		B22ACB7A21B227A00060C6C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB7921B227A00060C6C2 /* ViewController.swift */; };
 		B22ACB7D21B227A00060C6C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22ACB7B21B227A00060C6C2 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0139333BEE622732131F897 /* Pods-omdb-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example.debug.xcconfig"; sourceTree = "<group>"; };
+		B07CAC1E9434DAFC3A6CFC43 /* Pods-omdb-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example.release.xcconfig"; sourceTree = "<group>"; };
 		B22ACB7421B227A00060C6C2 /* omdb-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "omdb-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22ACB7721B227A00060C6C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B22ACB7921B227A00060C6C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		B22ACB7E21B227A10060C6C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22ACB8121B227A10060C6C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B22ACB8321B227A10060C6C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43238F5D355A5D91FA4327ED /* Pods_omdb_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6751C41872096C1A8DB6F3E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0139333BEE622732131F897 /* Pods-omdb-example.debug.xcconfig */,
+				B07CAC1E9434DAFC3A6CFC43 /* Pods-omdb-example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B024B0907DBA3458C508191 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B22ACB6B21B2279F0060C6C2 = {
 			isa = PBXGroup;
 			children = (
 				B22ACB7621B227A00060C6C2 /* omdb-example */,
 				B22ACB7521B227A00060C6C2 /* Products */,
+				6751C41872096C1A8DB6F3E3 /* Pods */,
+				8B024B0907DBA3458C508191 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B22ACB8621B227A10060C6C2 /* Build configuration list for PBXNativeTarget "omdb-example" */;
 			buildPhases = (
+				E308CB67831E2A1EFB125A52 /* [CP] Check Pods Manifest.lock */,
 				B22ACB7021B2279F0060C6C2 /* Sources */,
 				B22ACB7121B2279F0060C6C2 /* Frameworks */,
 				B22ACB7221B2279F0060C6C2 /* Resources */,
+				305FA95A5C05075C512A0CB6 /* [CP] Embed Pods Frameworks */,
+				D4A29A1980B5BC602F80603C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		305FA95A5C05075C512A0CB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4A29A1980B5BC602F80603C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E308CB67831E2A1EFB125A52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-omdb-example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B22ACB7021B2279F0060C6C2 /* Sources */ = {
@@ -280,16 +361,14 @@
 		};
 		B22ACB8721B227A10060C6C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0139333BEE622732131F897 /* Pods-omdb-example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC8XZV676G;
 				INFOPLIST_FILE = "omdb-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wordpress.vyatri.omdb-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -299,16 +378,14 @@
 		};
 		B22ACB8821B227A10060C6C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B07CAC1E9434DAFC3A6CFC43 /* Pods-omdb-example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC8XZV676G;
 				INFOPLIST_FILE = "omdb-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wordpress.vyatri.omdb-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
