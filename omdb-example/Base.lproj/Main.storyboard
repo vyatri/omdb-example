@@ -35,7 +35,7 @@
                                     <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zXL-w2-ynp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviecard" id="zXL-w2-ynp">
                                         <rect key="frame" x="15" y="15" width="149" height="265"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -50,6 +50,7 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-El-SJc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="149" height="205"/>
+                                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Knw-El-SJc" secondAttribute="height" multiplier="8:11" id="1dA-t5-eQ2"/>
                                                                     </constraints>

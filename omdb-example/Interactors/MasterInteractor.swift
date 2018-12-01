@@ -15,7 +15,7 @@ import UIKit
 
 protocol MasterBusinessLogic
 {
-  func doSomething(request: Master.Something.Request)
+//  func doSomething(request: Master.Something.Request)
 }
 
 protocol MasterDataStore
@@ -25,18 +25,18 @@ protocol MasterDataStore
 
 class MasterInteractor: MasterBusinessLogic, MasterDataStore
 {
-  var presenter: MasterPresentationLogic?
-  var worker: MasterWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Master.Something.Request)
-  {
-    worker = MasterWorker()
-    worker?.doSomeWork()
-    
-    let response = Master.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+//  var presenter: MasterPresentationLogic?
+//  var worker: MasterWorker?
+//  //var name: String = ""
+//
+//  // MARK: Do something
+//
+//  func doSomething(request: Master.Something.Request)
+//  {
+//    worker = MasterWorker()
+//    worker?.doSomeWork()
+//
+//    let response = Master.Something.Response()
+//    presenter?.presentSomething(response: response)
+//  }
 }
