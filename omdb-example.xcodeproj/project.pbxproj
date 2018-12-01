@@ -101,6 +101,7 @@
 				B22ACB9A21B26BC40060C6C2 /* Models */,
 				B22ACB9D21B27AD40060C6C2 /* Workers */,
 				B22ACBA321B2821C0060C6C2 /* Classes */,
+				B22ACBA621B282D90060C6C2 /* Views */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
@@ -156,6 +157,13 @@
 				B22ACBA421B282450060C6C2 /* Reachability.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B22ACBA621B282D90060C6C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
