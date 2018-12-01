@@ -20,7 +20,7 @@ protocol MasterDisplayLogic: class
 class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
   var interactor: MasterBusinessLogic?
-//  var router: (NSObjectProtocol & MasterRoutingLogic & MasterDataPassing)?
+  var router: (NSObjectProtocol & MasterRoutingLogic & MasterDataPassing)?
 
   // MARK: Object lifecycle
   
@@ -42,14 +42,14 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
   {
     let viewController = self
     let interactor = MasterInteractor()
-//    let presenter = MasterPresenter()
-//    let router = MasterRouter()
-//    viewController.interactor = interactor
-//    viewController.router = router
-//    interactor.presenter = presenter
-//    presenter.viewController = viewController
-//    router.viewController = viewController
-//    router.dataStore = interactor
+    let presenter = MasterPresenter()
+    let router = MasterRouter()
+    viewController.interactor = interactor
+    viewController.router = router
+    interactor.presenter = presenter
+    presenter.viewController = viewController
+    router.viewController = viewController
+    router.dataStore = interactor
   }
   
   // MARK: View lifecycle
@@ -73,8 +73,8 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
   
   func doSomething()
   {
-//    let request = Master.Something.Request()
-//    interactor?.doSomething(request: request)
+    let request = Master.Something.Request()
+    interactor?.doSomething(request: request)
   }
     
     
