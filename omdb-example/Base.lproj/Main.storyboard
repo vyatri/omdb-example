@@ -26,18 +26,26 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="hYj-GI-4tV">
-                                    <size key="itemSize" width="344" height="57"/>
+                                    <size key="itemSize" width="344" height="88"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zXL-w2-ynp">
-                                        <rect key="frame" x="15.5" y="15" width="344" height="57"/>
+                                        <rect key="frame" x="15.5" y="15" width="344" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="344" height="57"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="344" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-El-SJc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="88"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Knw-El-SJc" secondAttribute="height" multiplier="8:11" id="1dA-t5-eQ2"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
