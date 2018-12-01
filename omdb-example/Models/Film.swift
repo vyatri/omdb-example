@@ -13,14 +13,14 @@ class Film: NSObject, Codable {
     let imdbID: String
     let Title: String
     let Year: String
-    let Type: String
+    let Category: String
     let Poster: String
     
-    init(imdbID: String, Title: String, Year: String, Type: String, Poster: String) {
+    init(imdbID: String, Title: String, Year: String, Category: String, Poster: String) {
         self.imdbID = imdbID
         self.Title = Title
         self.Year = Year
-        self.Type = Type
+        self.Category = Category
         self.Poster = Poster
     }
 }
