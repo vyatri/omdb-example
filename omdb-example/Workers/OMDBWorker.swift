@@ -17,7 +17,7 @@ class OMDBWorker
 {
     
     
-    func doSearch(_ keyword: String, page: Int = 1, completion: @escaping (FilmList) -> Void)
+    func doSearch(_ keyword: String, page: Int = 1, completion: @escaping (FilmList?) -> Void)
     {
         let parameters: Parameters = [
             "i": "tt3896198", "apikey": "58aba22c", "r": "json",
@@ -34,10 +34,13 @@ class OMDBWorker
                         completion(gitData)
                     } catch let err {
                         print("Err", err)
+                        completion(nil)
                     }
+                } else {
+                    completion(nil)
                 }
-            case .failure(let error):
-                print(error)
+            case .failure( _):
+                completion(nil)
             }
         }
     }

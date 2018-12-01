@@ -14,7 +14,7 @@ import UIKit
 
 protocol MasterDisplayLogic: class
 {
-    func displayData(_ results: FilmList)
+    func displayData(_ results: FilmList?)
 }
 
 class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -66,22 +66,23 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    var searchResults: FilmList!
     
-    
-    func displayData(_ results: FilmList) {
-        
+    func displayData(_ results: FilmList?) {
+        searchResults = results
+        collectionView.reloadData()
     }
     
     // card size for list view
     func portraitCellSize() -> CGSize {
-        let width = self.collectionView.bounds.size.width
-        let height:CGFloat = 145.0
+        let width = self.collectionView.bounds.size.width - 30
+        let height:CGFloat = 100.0
         return CGSize(width: width, height: height)
     }
     
     // card size for grid view
     func landscapeCellSize() -> CGSize {
-        let width:CGFloat = (self.collectionView.bounds.size.width - 75 ) / 4
+        let width:CGFloat = (self.collectionView.bounds.size.width - 90 ) / 4
         // image ratio is 8:11. Then, 60 height for title is enough
         let height:CGFloat = ( width * 11 / 8 ) + 60
         return CGSize(width: width, height: height)
@@ -105,11 +106,16 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     // MARK: - UICollectionView delegate, datasource, and flowlayout
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        if searchResults == nil {
+            return 0
+        } else {
+            return searchResults.Search.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmcard", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmcard", for: indexPath) as! FilmCell
+        cell.setData(searchResults.Search[indexPath.item])
         return cell
     }
     

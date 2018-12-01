@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dEy-vJ-Fvg">
-                                <rect key="frame" x="0.0" y="32" width="959" height="56"/>
+                                <rect key="frame" x="0.0" y="32" width="667" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="a3G-kX-ybj"/>
@@ -59,13 +59,13 @@
                                                                     <rect key="frame" x="0.0" y="205" width="149" height="60"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-CN-LKf">
-                                                                            <rect key="frame" x="10" y="10" width="129" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="10" width="149" height="17"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-p1-iJD">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="17"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="17"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Movie Title is Here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1l-pK-jWc">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="129" height="17"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="149" height="17"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                                             <color key="textColor" red="0.023529411760000001" green="0.42745098040000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                                                                                     </constraints>
                                                                                 </view>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43i-Lh-Vjb">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="20"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="20"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="uj2-lu-wI6">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="20"/>
@@ -117,15 +117,15 @@
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstItem="DMS-CN-LKf" firstAttribute="top" secondItem="PgE-Mk-Miv" secondAttribute="top" constant="10" id="JJj-dS-nN1"/>
-                                                                        <constraint firstItem="DMS-CN-LKf" firstAttribute="leading" secondItem="PgE-Mk-Miv" secondAttribute="leading" constant="10" id="b9b-9r-4zg"/>
+                                                                        <constraint firstItem="DMS-CN-LKf" firstAttribute="leading" secondItem="PgE-Mk-Miv" secondAttribute="leading" id="b9b-9r-4zg"/>
                                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DMS-CN-LKf" secondAttribute="bottom" constant="10" id="sP9-9z-x12"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="DMS-CN-LKf" secondAttribute="trailing" constant="10" id="yw8-vp-KCo"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="DMS-CN-LKf" secondAttribute="trailing" id="yw8-vp-KCo"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
                                                             <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
                                                             <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
-                                                            <variation key="heightClass=regular-widthClass=compact" axis="horizontal"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" axis="horizontal" spacing="10"/>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
