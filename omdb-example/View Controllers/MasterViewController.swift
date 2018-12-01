@@ -63,6 +63,7 @@ class MasterViewController: UIViewController, MasterDisplayLogic
   // MARK: Do something
   
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var collectionView: UICollectionView!
     
   
   func doSomething()
