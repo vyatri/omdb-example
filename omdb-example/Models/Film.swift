@@ -13,6 +13,7 @@ enum CategoryOption : String, Codable {
     case series
     case movie
     case eposide
+    case game
 }
 
 struct Film: Codable {
