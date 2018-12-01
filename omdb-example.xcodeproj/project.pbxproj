@@ -93,6 +93,7 @@
 				B22ACB9121B24EFC0060C6C2 /* Interactors */,
 				B22ACB9721B26B660060C6C2 /* Presenters */,
 				B22ACB9A21B26BC40060C6C2 /* Models */,
+				B22ACB9D21B27AD40060C6C2 /* Workers */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
@@ -131,6 +132,13 @@
 				B22ACB9B21B26C050060C6C2 /* Film.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B22ACB9D21B27AD40060C6C2 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,7 +434,10 @@
 				);
 				INFOPLIST_FILE = "omdb-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wordpress.vyatri.omdb-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -447,7 +458,10 @@
 				);
 				INFOPLIST_FILE = "omdb-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wordpress.vyatri.omdb-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
