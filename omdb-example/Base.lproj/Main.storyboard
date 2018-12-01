@@ -35,7 +35,7 @@
                                     <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviecard" id="zXL-w2-ynp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filmcard" id="zXL-w2-ynp" customClass="FilmCell" customModule="omdb_example" customModuleProvider="target">
                                         <rect key="frame" x="15" y="15" width="149" height="265"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -144,6 +144,12 @@
                                             <constraint firstItem="EAa-5e-XrP" firstAttribute="top" secondItem="zXL-w2-ynp" secondAttribute="top" id="osl-8h-x2d"/>
                                             <constraint firstAttribute="bottom" secondItem="EAa-5e-XrP" secondAttribute="bottom" id="vdw-3j-awi"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="5w1-mb-1fB" id="aMa-a1-dvy"/>
+                                            <outlet property="imageView" destination="Knw-El-SJc" id="uVS-Bx-cPB"/>
+                                            <outlet property="titleLabel" destination="q1l-pK-jWc" id="IEI-XP-r0h"/>
+                                            <outlet property="yearLabel" destination="Fvr-YJ-Ed5" id="epK-vy-Nbr"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
