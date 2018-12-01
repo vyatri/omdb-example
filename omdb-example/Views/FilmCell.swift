@@ -16,7 +16,7 @@ class FilmCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     
     func prepareForReuse() {
-        imageView.image = nil
+        imageView.image = UIImage()
         titleLabel.text = ""
         yearLabel.text = ""
         categoryLabel.text = ""
