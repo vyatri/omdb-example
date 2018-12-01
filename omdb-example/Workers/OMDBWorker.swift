@@ -14,7 +14,30 @@ import UIKit
 
 class OMDBWorker
 {
-  func doSomeWork()
-  {
-  }
+    
+    
+    func doSearch(_ keyword: String, page: Int = 1) -> [Film]
+    {
+        
+    }
+    
+    func getResultsFromDB(_ keyword: String) -> [Film]
+    {
+        
+    }
+    
+    func saveResults(_ results: [Film], onpage: Int) -> Bool
+    {
+        
+    }
+    
+    func getLastSearchBreakpoinnt(_ keyword: String) -> History
+    {
+        
+    }
+    
+    func saveLastBreakpoint(_ history: History) -> Bool
+    {
+        
+    }
 }
