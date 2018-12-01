@@ -91,6 +91,7 @@
 				B22ACB7721B227A00060C6C2 /* AppDelegate.swift */,
 				B22ACB8E21B23D500060C6C2 /* View Controllers */,
 				B22ACB9121B24EFC0060C6C2 /* Interactors */,
+				B22ACB9721B26B660060C6C2 /* Presenters */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
@@ -113,6 +114,13 @@
 				B22ACB9521B24F520060C6C2 /* MasterInteractor.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		B22ACB9721B26B660060C6C2 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
