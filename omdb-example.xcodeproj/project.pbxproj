@@ -15,6 +15,7 @@
 		B22ACB8A21B238E70060C6C2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22ACB8921B238E70060C6C2 /* Realm.framework */; };
 		B22ACB8C21B238EB0060C6C2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22ACB8B21B238EB0060C6C2 /* RealmSwift.framework */; };
 		B22ACB9021B23DB40060C6C2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB8F21B23DB40060C6C2 /* MasterViewController.swift */; };
+		B22ACB9621B24F520060C6C2 /* MasterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACB9521B24F520060C6C2 /* MasterInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B22ACB8921B238E70060C6C2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		B22ACB8B21B238EB0060C6C2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B22ACB8F21B23DB40060C6C2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B22ACB9521B24F520060C6C2 /* MasterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterInteractor.swift; sourceTree = "<group>"; };
 		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 		B22ACB9121B24EFC0060C6C2 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				B22ACB9521B24F520060C6C2 /* MasterInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22ACB9621B24F520060C6C2 /* MasterInteractor.swift in Sources */,
 				B22ACB7821B227A00060C6C2 /* AppDelegate.swift in Sources */,
 				B22ACB9021B23DB40060C6C2 /* MasterViewController.swift in Sources */,
 			);
