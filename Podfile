@@ -6,4 +6,5 @@ target 'omdb-example' do
   use_frameworks!
     pod 'Alamofire'
     pod 'RealmSwift'
+    pod 'Kingfisher'
 end
