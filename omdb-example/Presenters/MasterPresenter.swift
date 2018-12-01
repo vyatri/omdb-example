@@ -14,7 +14,7 @@ import UIKit
 
 protocol MasterPresentationLogic
 {
-  func presentSomething(response: Master.Something.Response)
+//  func presentSomething(response: Master.Something.Response)
 }
 
 class MasterPresenter: MasterPresentationLogic
@@ -23,9 +23,9 @@ class MasterPresenter: MasterPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Master.Something.Response)
-  {
-    let viewModel = Master.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+//  func presentSomething(response: Master.Something.Response)
+//  {
+//    let viewModel = Master.Something.ViewModel()
+//    viewController?.displaySomething(viewModel: viewModel)
+//  }
 }

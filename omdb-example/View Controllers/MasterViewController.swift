@@ -73,8 +73,8 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     func doSomething()
     {
-        let request = Master.Something.Request()
-        interactor?.doSomething(request: request)
+//        let request = Master.Something.Request()
+//        interactor?.doSomething(request: request)
     }
     
     
@@ -114,7 +114,7 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviecard", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmcard", for: indexPath)
         return cell
     }
     

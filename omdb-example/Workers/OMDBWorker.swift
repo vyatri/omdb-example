@@ -18,26 +18,26 @@ class OMDBWorker
     
     func doSearch(_ keyword: String, page: Int = 1) -> [Film]
     {
-        
+        return []
     }
     
     func getResultsFromDB(_ keyword: String) -> [Film]
     {
-        
+        return []
     }
     
     func saveResults(_ results: [Film], onpage: Int) -> Bool
     {
-        
+        return true
     }
     
-    func getLastSearchBreakpoinnt(_ keyword: String) -> History
+    func getLastSearchBreakpoinnt(_ keyword: String) -> History?
     {
-        
+        return nil
     }
     
     func saveLastBreakpoint(_ history: History) -> Bool
     {
-        
+        return true
     }
 }

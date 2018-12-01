@@ -25,8 +25,8 @@ protocol MasterDataStore
 
 class MasterInteractor: MasterBusinessLogic, MasterDataStore
 {
-//  var presenter: MasterPresentationLogic?
-//  var worker: MasterWorker?
+  var presenter: MasterPresentationLogic?
+  var worker: OMDBWorker?
 //  //var name: String = ""
 //
 //  // MARK: Do something
