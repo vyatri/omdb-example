@@ -17,7 +17,7 @@ protocol MasterDisplayLogic: class
   
 }
 
-class MasterViewController: UIViewController, MasterDisplayLogic
+class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate
 {
   var interactor: MasterBusinessLogic?
   var router: (NSObjectProtocol & MasterRoutingLogic & MasterDataPassing)?
@@ -72,5 +72,17 @@ class MasterViewController: UIViewController, MasterDisplayLogic
     interactor?.doSomething(request: request)
   }
   
-  
+    // MARK: - Searchbar delegate
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
 }
