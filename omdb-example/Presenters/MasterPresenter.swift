@@ -14,18 +14,14 @@ import UIKit
 
 protocol MasterPresentationLogic
 {
-//  func presentSomething(response: Master.Something.Response)
+    func presentData(_ results: FilmList)
 }
 
 class MasterPresenter: MasterPresentationLogic
 {
   weak var viewController: MasterDisplayLogic?
   
-  // MARK: Do something
-  
-//  func presentSomething(response: Master.Something.Response)
-//  {
-//    let viewModel = Master.Something.ViewModel()
-//    viewController?.displaySomething(viewModel: viewModel)
-//  }
+    func presentData(_ results: FilmList) {
+        viewController?.displayData(results)
+    }
 }

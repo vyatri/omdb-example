@@ -15,7 +15,7 @@ import UIKit
 
 protocol MasterBusinessLogic
 {
-//  func doSomething(request: Master.Something.Request)
+    func fetchData(keyword: String?, page: Int)
 }
 
 protocol MasterDataStore
@@ -31,12 +31,14 @@ class MasterInteractor: MasterBusinessLogic, MasterDataStore
 //
 //  // MARK: Do something
 //
-//  func doSomething(request: Master.Something.Request)
-//  {
-//    worker = MasterWorker()
-//    worker?.doSomeWork()
-//
-//    let response = Master.Something.Response()
-//    presenter?.presentSomething(response: response)
-//  }
+  func fetchData(keyword: String?, page: Int = 1)
+  {
+    
+    guard keyword != nil && keyword!.trimmingCharacters(in: NSCharacterSet.whitespaces).count > 0 else { return }
+    
+    worker = OMDBWorker()
+    worker?.doSearch(keyword ?? "", page: page, completion: { (results) in
+        self.presenter?.presentData(results)
+    })
+  }
 }

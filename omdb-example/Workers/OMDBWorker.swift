@@ -11,14 +11,35 @@
 //
 
 import UIKit
+import Alamofire
 
 class OMDBWorker
 {
     
     
-    func doSearch(_ keyword: String, page: Int = 1) -> [Film]
+    func doSearch(_ keyword: String, page: Int = 1, completion: @escaping (FilmList) -> Void)
     {
-        return []
+        let parameters: Parameters = [
+            "i": "tt3896198", "apikey": "58aba22c", "r": "json",
+            "s": keyword.lowercased(),
+            "page": page
+        ]
+        Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate().responseData { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value {
+                    do {
+                        let decoder = JSONDecoder()
+                        let gitData = try decoder.decode(FilmList.self, from: data)
+                        completion(gitData)
+                    } catch let err {
+                        print("Err", err)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func getResultsFromDB(_ keyword: String) -> [Film]

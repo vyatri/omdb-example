@@ -9,18 +9,36 @@
 import Foundation
 import UIKit
 
-class Film: NSObject, Codable {
+enum CategoryOption : String, Codable {
+    case series
+    case movie
+    case eposide
+}
+
+struct Film: Codable {
     let imdbID: String
     let Title: String
     let Year: String
-    let Category: String
-    let Poster: String
+    let Category: CategoryOption
+    let Poster: URL?
     
-    init(imdbID: String, Title: String, Year: String, Category: String, Poster: String) {
+    private enum CodingKeys: String, CodingKey {
+        case imdbID
+        case Title
+        case Year
+        case Category = "Type"
+        case Poster
+    }
+    
+    init(imdbID: String, Title: String, Year: String, Category: CategoryOption, Poster: String) {
         self.imdbID = imdbID
         self.Title = Title
         self.Year = Year
         self.Category = Category
-        self.Poster = Poster
+        self.Poster = URL(string: Poster)
     }
+}
+
+struct FilmList : Codable {
+    let Search: [Film]
 }

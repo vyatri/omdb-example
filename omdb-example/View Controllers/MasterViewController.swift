@@ -14,7 +14,7 @@ import UIKit
 
 protocol MasterDisplayLogic: class
 {
-    
+    func displayData(_ results: FilmList)
 }
 
 class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -57,7 +57,6 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -65,18 +64,13 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    // MARK: Do something
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    func doSomething()
-    {
-//        let request = Master.Something.Request()
-//        interactor?.doSomething(request: request)
+    func displayData(_ results: FilmList) {
+        
     }
-    
     
     // card size for list view
     func portraitCellSize() -> CGSize {
@@ -96,7 +90,8 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     // MARK: - Searchbar delegate
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        self.view.endEditing(true)
+        interactor?.fetchData(keyword: searchBar.text, page: 1)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
