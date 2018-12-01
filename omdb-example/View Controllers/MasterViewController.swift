@@ -87,7 +87,7 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     // card size for grid view
     func landscapeCellSize() -> CGSize {
-        let width:CGFloat = (self.collectionView.bounds.size.width - 60 ) / 4
+        let width:CGFloat = (self.collectionView.bounds.size.width - 75 ) / 4
         // image ratio is 8:11. Then, 60 height for title is enough
         let height:CGFloat = ( width * 11 / 8 ) + 60
         return CGSize(width: width, height: height)
