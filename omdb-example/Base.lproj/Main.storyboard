@@ -13,6 +13,7 @@
         <!--Master View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="omdb_example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -25,6 +26,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="a3G-kX-ybj"/>
                                 </connections>
                             </searchBar>
+                            <stackView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c6h-eu-BY5">
+                                <rect key="frame" x="140" y="170" width="95" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WG-TK-4nx">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psk-XZ-H2G">
+                                        <rect key="frame" x="46" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="toggleSyncSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="pF5-Gv-wkf"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CQB-u1-F7E">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -167,9 +185,11 @@
                             <constraint firstItem="dEy-vJ-Fvg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="741-Ps-uqD"/>
                             <constraint firstItem="CQB-u1-F7E" firstAttribute="top" secondItem="dEy-vJ-Fvg" secondAttribute="bottom" id="8IL-xT-dOh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQB-u1-F7E" secondAttribute="trailing" id="DHJ-ey-p4R"/>
+                            <constraint firstItem="c6h-eu-BY5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fhr-bJ-8dz"/>
                             <constraint firstItem="dEy-vJ-Fvg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mze-U4-sMX"/>
                             <constraint firstItem="dEy-vJ-Fvg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q4U-Ev-awC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CQB-u1-F7E" secondAttribute="bottom" id="seO-zQ-6mF"/>
+                            <constraint firstItem="c6h-eu-BY5" firstAttribute="top" secondItem="dEy-vJ-Fvg" secondAttribute="bottom" constant="50" id="uwY-GS-KTi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -179,7 +199,6 @@
                         <outlet property="searchBar" destination="dEy-vJ-Fvg" id="vYZ-fP-AiK"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="978.39999999999998" y="25.637181409295355"/>
         </scene>

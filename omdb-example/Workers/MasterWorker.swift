@@ -59,8 +59,12 @@ class MasterWorker
                     do {
                         let decoder = JSONDecoder()
                         let gitData = try decoder.decode(FilmList.self, from: data)
-                        historyWorker.saveHistory(History(keyword: keyword, lastPage: pageToSearch))
-                        searchedFilmsWorker.saveResults(gitData.Search, keyword: keyword)
+                        
+                        if UserDefaults.standard.bool(forKey: "noSync") == false {
+                            historyWorker.saveHistory(History(keyword: keyword, lastPage: pageToSearch))
+                            searchedFilmsWorker.saveResults(gitData.Search, keyword: keyword)
+                        }
+                        
                         filmCollectors.append(contentsOf: gitData.Search)
                         completion(FilmList(filmCollectors), pageToSearch+1)
                         return

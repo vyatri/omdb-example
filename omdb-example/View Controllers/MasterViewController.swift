@@ -113,6 +113,9 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
         return CGSize(width: width, height: height)
     }
     
+    @IBAction func toggleSyncSwitch(_ sender: UISwitch) {
+        UserDefaults.standard.set((sender.isOn) ? false : true , forKey: "noSync")
+    }
     // MARK: - Searchbar delegate
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -134,8 +137,10 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if searchResults == nil {
+            self.collectionView.isHidden = true
             return 0
         } else {
+            self.collectionView.isHidden = false
             return searchResults.count
         }
     }
