@@ -22,6 +22,9 @@
 		B22ACBA821B283C70060C6C2 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBA721B283C70060C6C2 /* FilmCell.swift */; };
 		B22ACBB221B2861E0060C6C2 /* MasterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBB121B2861E0060C6C2 /* MasterRouter.swift */; };
 		B22ACBC521B357CC0060C6C2 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBC421B357CC0060C6C2 /* UICollectionView+Extensions.swift */; };
+		B22ACBC721B35C2B0060C6C2 /* FilmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBC621B35C2B0060C6C2 /* FilmDetail.swift */; };
+		B22ACBCA21B36D560060C6C2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBC821B36D560060C6C2 /* Model.xcdatamodeld */; };
+		B22ACBCC21B3718F0060C6C2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBCB21B3718F0060C6C2 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		B22ACBA721B283C70060C6C2 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 		B22ACBB121B2861E0060C6C2 /* MasterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterRouter.swift; sourceTree = "<group>"; };
 		B22ACBC421B357CC0060C6C2 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		B22ACBC621B35C2B0060C6C2 /* FilmDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetail.swift; sourceTree = "<group>"; };
+		B22ACBC921B36D560060C6C2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B22ACBCB21B3718F0060C6C2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +117,7 @@
 				B22ACBA621B282D90060C6C2 /* Views */,
 				B22ACBC321B357840060C6C2 /* Extensions */,
 				B22ACB7B21B227A00060C6C2 /* Main.storyboard */,
+				B22ACBC821B36D560060C6C2 /* Model.xcdatamodeld */,
 				B22ACB7E21B227A10060C6C2 /* Assets.xcassets */,
 				B22ACB8021B227A10060C6C2 /* LaunchScreen.storyboard */,
 				B22ACB8321B227A10060C6C2 /* Info.plist */,
@@ -147,6 +154,7 @@
 			children = (
 				B22ACB9B21B26C050060C6C2 /* Film.swift */,
 				B22ACBA121B27BF10060C6C2 /* History.swift */,
+				B22ACBC621B35C2B0060C6C2 /* FilmDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B22ACBA421B282450060C6C2 /* Reachability.swift */,
+				B22ACBCB21B3718F0060C6C2 /* DataManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -270,15 +279,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-omdb-example/Pods-omdb-example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -327,6 +332,8 @@
 			files = (
 				B22ACBA821B283C70060C6C2 /* FilmCell.swift in Sources */,
 				B22ACB9C21B26C050060C6C2 /* Film.swift in Sources */,
+				B22ACBC721B35C2B0060C6C2 /* FilmDetail.swift in Sources */,
+				B22ACBCC21B3718F0060C6C2 /* DataManager.swift in Sources */,
 				B22ACB9F21B27B2A0060C6C2 /* OMDBWorker.swift in Sources */,
 				B22ACBA221B27BF10060C6C2 /* History.swift in Sources */,
 				B22ACBC521B357CC0060C6C2 /* UICollectionView+Extensions.swift in Sources */,
@@ -335,6 +342,7 @@
 				B22ACBB221B2861E0060C6C2 /* MasterRouter.swift in Sources */,
 				B22ACB7821B227A00060C6C2 /* AppDelegate.swift in Sources */,
 				B22ACBA521B282450060C6C2 /* Reachability.swift in Sources */,
+				B22ACBCA21B36D560060C6C2 /* Model.xcdatamodeld in Sources */,
 				B22ACB9021B23DB40060C6C2 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +555,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B22ACBC821B36D560060C6C2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B22ACBC921B36D560060C6C2 /* Model.xcdatamodel */,
+			);
+			currentVersion = B22ACBC921B36D560060C6C2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B22ACB6C21B2279F0060C6C2 /* Project object */;
 }
