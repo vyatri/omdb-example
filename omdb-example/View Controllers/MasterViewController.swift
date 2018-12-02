@@ -14,7 +14,8 @@ import UIKit
 
 protocol MasterDisplayLogic: class
 {
-    func displayData(_ results: FilmList?, atPage: Int)
+    func displayData(_ results: FilmList?, nextPage: Int)
+    func clearDisplay()
 }
 
 class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -67,26 +68,33 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     var searchResults: [Film]!
-    var currentPage: Int!
+    var needDisplayPage: Int!
     var enableSearchOnScroll: Bool!
     
-    func displayData(_ results: FilmList?, atPage: Int = 1) {
+    func displayData(_ results: FilmList?, nextPage: Int = 1) {
         if (searchResults == nil) {
             searchResults = results?.Search
             enableSearchOnScroll = true
         } else if (results != nil && results!.Search.count > 0){
-            if currentPage == 1{
+            if needDisplayPage == 1{
                 searchResults = results?.Search
             } else {
                 searchResults += results!.Search
             }
             enableSearchOnScroll = true
-        } else if currentPage == 1{
+        } else if needDisplayPage == 1{
             searchResults = nil
         } else {
             // reached end of page
         }
-        currentPage = atPage
+        needDisplayPage = nextPage
+        collectionView.reloadDataSmoothly()
+    }
+    
+    func clearDisplay() {
+        searchResults = nil
+        needDisplayPage = 1
+        enableSearchOnScroll = false
         collectionView.reloadDataSmoothly()
     }
     
@@ -109,9 +117,9 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
-        currentPage = 1
+        needDisplayPage = 1
         enableSearchOnScroll = true
-        interactor?.fetchData(keyword: searchBar.text, page: currentPage ?? 1)
+        interactor?.fetchData(keyword: searchBar.text, page: needDisplayPage ?? 1)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -156,7 +164,7 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
         let contentHeight = scrollView.contentSize.height
         if offsetY > contentHeight - scrollView.frame.size.height - 20 {
             enableSearchOnScroll = false
-            interactor?.fetchData(keyword: searchBar.text, page: (currentPage ?? 1) + 1 )
+            interactor?.fetchData(keyword: searchBar.text, page: (needDisplayPage ?? 1) )
             self.collectionView.reloadData()
         }
     }

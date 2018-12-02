@@ -26,19 +26,24 @@ protocol MasterDataStore
 class MasterInteractor: MasterBusinessLogic, MasterDataStore
 {
   var presenter: MasterPresentationLogic?
-  var worker: OMDBWorker?
+  var worker: MasterWorker?
 //  //var name: String = ""
 //
 //  // MARK: Do something
 //
   func fetchData(keyword: String?, page: Int = 1)
   {
+    worker = MasterWorker()
     
-    guard keyword != nil && keyword!.trimmingCharacters(in: NSCharacterSet.whitespaces).count > 0 else { return }
+    guard keyword != nil else { return }
+    let trimmedKeyword = keyword!.trimmingCharacters(in: NSCharacterSet.whitespaces).lowercased()
+    guard trimmedKeyword.count > 0 else {
+        self.presenter?.presentEmptyData()
+        return
+    }
     
-    worker = OMDBWorker()
-    worker?.doSearch(keyword ?? "", page: page, completion: { (results) in
-        self.presenter?.presentData(results, atPage: page)
+    worker?.doSearch(trimmedKeyword, page: page, completion: { (results, nextPage) in
+        self.presenter?.presentData(results, nextPage: nextPage)
     })
   }
 }

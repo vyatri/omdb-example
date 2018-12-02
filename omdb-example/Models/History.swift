@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class History: NSObject, Codable {
 
     let keyword: String
     let lastPage: Int
-    let lastImdbID: String
     
-    init(keyword: String, lastPage: Int, lastImdbID: String) {
+    init(keyword: String, lastPage: Int) {
         self.keyword = keyword
         self.lastPage = lastPage
-        self.lastImdbID = lastImdbID
+    }
+    
+    init(data: NSManagedObject) {
+        self.keyword = data.value(forKey: "keyword_") as! String
+        self.lastPage = Int(data.value(forKey: "lastPage_") as! Int64)
     }
 }

@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 enum CategoryOption : String, Codable {
-    case series
-    case movie
-    case eposide
-    case game
+    case series = "series"
+    case movie = "movie"
+    case eposide = "episode"
+    case game = "game"
 }
 
 struct Film: Codable {
@@ -21,7 +22,7 @@ struct Film: Codable {
     let Title: String
     let Year: String
     let Category: CategoryOption
-    let Poster: URL?
+    let Poster: String
     
     private enum CodingKeys: String, CodingKey {
         case imdbID
@@ -31,15 +32,19 @@ struct Film: Codable {
         case Poster
     }
     
-    init(imdbID: String, Title: String, Year: String, Category: CategoryOption, Poster: String) {
-        self.imdbID = imdbID
-        self.Title = Title
-        self.Year = Year
-        self.Category = Category
-        self.Poster = URL(string: Poster)
+    init(data: NSManagedObject) {
+        self.imdbID = data.value(forKey: "imdbID") as! String
+        self.Title = data.value(forKey: "title_") as! String
+        self.Year = data.value(forKey: "year_") as! String
+        self.Category = CategoryOption(rawValue: data.value(forKey: "category_") as! String)!
+        self.Poster = data.value(forKey: "poster_") as! String
     }
 }
 
 struct FilmList : Codable {
     let Search: [Film]
+    
+    init(_ films: [Film]) {
+        self.Search = films
+    }
 }

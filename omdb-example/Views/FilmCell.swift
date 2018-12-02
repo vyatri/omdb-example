@@ -16,17 +16,13 @@ class FilmCell: UICollectionViewCell {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     
-    override func prepareForReuse()
-    {
-        imageView.image = UIImage()
-        titleLabel.text = ""
-        yearLabel.text = ""
-        categoryLabel.text = ""
-    }
-    
     func setData(_ film: Film)
     {
-        self.imageView.kf.setImage(with: film.Poster)
+        self.imageView.image = UIImage()
+        if film.Poster != "" && film.Poster != "N/A" {
+            self.imageView.kf.indicatorType = .activity
+            self.imageView.kf.setImage(with: URL(string:film.Poster))
+        }
         self.titleLabel.text = film.Title
         self.yearLabel.text = film.Year
         self.categoryLabel.text = film.Category.rawValue.capitalized
