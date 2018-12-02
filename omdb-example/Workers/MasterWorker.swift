@@ -50,7 +50,7 @@ class MasterWorker
         ]
         Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate()
             .responseJSON(completionHandler: { (response) in
-                print(response.result.value)
+                
             })
             .responseData { response in
             switch response.result {
