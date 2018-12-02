@@ -48,7 +48,11 @@ class MasterWorker
             "s": keyword,
             "page": pageToSearch
         ]
-        Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate().responseData { response in
+        Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate()
+            .responseJSON(completionHandler: { (response) in
+                print(response.result.value)
+            })
+            .responseData { response in
             switch response.result {
             case .success:
                 if let data = response.result.value {
@@ -64,10 +68,10 @@ class MasterWorker
                         print("Err", err)
                     }
                 }
-                completion(nil, pageToSearch)
             case .failure( _):
-                completion(nil, pageToSearch)
+                print("network error")
             }
+            completion(FilmList(filmCollectors), pageToSearch)
         }
     }
     
