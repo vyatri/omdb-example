@@ -72,21 +72,27 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     var enableSearchOnScroll: Bool!
     
     func displayData(_ results: FilmList?, nextPage: Int = 1) {
-        if (searchResults == nil) {
-            searchResults = results?.Search
-            enableSearchOnScroll = true
-        } else if (results != nil && results!.Search.count > 0){
-            if needDisplayPage == 1{
+        
+        // results found
+        if (results != nil && results!.Search.count > 0){
+            if needDisplayPage == 1 || searchResults == nil {
                 searchResults = results?.Search
             } else {
                 searchResults += results!.Search
             }
             enableSearchOnScroll = true
-        } else if needDisplayPage == 1{
-            searchResults = nil
-        } else {
-            // reached end of page
         }
+        
+        // keyword is not yielding results
+        else if needDisplayPage == 1 {
+            searchResults = nil
+        }
+        
+        // reached end of page
+        else {
+            
+        }
+        
         needDisplayPage = nextPage
         collectionView.reloadDataSmoothly()
     }
