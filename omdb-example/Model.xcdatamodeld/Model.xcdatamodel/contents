@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Films" representedClassName="Films" syncable="YES" codeGenerationType="class">
+        <attribute name="actors_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="director_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imdbID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imdbRating_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imdbVotes_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plot_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poster_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="writer_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year_" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SearchedFilms" representedClassName="SearchedFilms" syncable="YES" codeGenerationType="class">
+        <attribute name="category_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imdbID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isDownloaded_" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="keyword_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poster_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year_" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SearchHistory" representedClassName="SearchHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="keyword_" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastPage_" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Films" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="SearchedFilms" positionX="-54" positionY="144" width="128" height="150"/>
+        <element name="SearchHistory" positionX="-36" positionY="153" width="128" height="75"/>
+    </elements>
+</model>
