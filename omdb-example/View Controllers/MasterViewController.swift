@@ -16,6 +16,7 @@ protocol MasterDisplayLogic: class
 {
     func displayData(_ results: FilmList?, nextPage: Int)
     func clearDisplay()
+    func openDetail(_ detail: FilmDetail)
 }
 
 class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -122,6 +123,11 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     @IBAction func toggleSyncSwitch(_ sender: UISwitch) {
         UserDefaults.standard.set((sender.isOn) ? false : true , forKey: "noSync")
     }
+    
+    func openDetail(_ detail: FilmDetail) {
+        self.router?.routeToDetail(detail)
+    }
+    
     // MARK: - Searchbar delegate
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -158,7 +164,9 @@ class MasterViewController: UIViewController, MasterDisplayLogic, UISearchBarDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let trueIndexes: [IndexPath]? = collectionView.indexPathsForSelectedItems
+        guard trueIndexes != nil && trueIndexes!.count > 0 else { return }
+        self.interactor?.openDetail(imdbID: searchResults[trueIndexes![0].item].imdbID)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

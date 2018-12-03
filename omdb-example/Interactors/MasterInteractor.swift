@@ -16,34 +16,53 @@ import UIKit
 protocol MasterBusinessLogic
 {
     func fetchData(keyword: String?, page: Int)
+    func openDetail(imdbID: String)
 }
 
 protocol MasterDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class MasterInteractor: MasterBusinessLogic, MasterDataStore
 {
-  var presenter: MasterPresentationLogic?
-  var worker: MasterWorker?
-//  //var name: String = ""
-//
-//  // MARK: Do something
-//
-  func fetchData(keyword: String?, page: Int = 1)
-  {
-    worker = MasterWorker()
-    
-    guard keyword != nil else { return }
-    let trimmedKeyword = keyword!.trimmingCharacters(in: NSCharacterSet.whitespaces).lowercased()
-    guard trimmedKeyword.count > 0 else {
-        self.presenter?.presentEmptyData()
-        return
+    var presenter: MasterPresentationLogic?
+    var worker: MasterWorker?
+    var detailWorker: DetailWorker?
+    //  //var name: String = ""
+    //
+    //  // MARK: Do something
+    //
+    func fetchData(keyword: String?, page: Int = 1)
+    {
+        worker = MasterWorker()
+        
+        guard keyword != nil else { return }
+        let trimmedKeyword = keyword!.trimmingCharacters(in: NSCharacterSet.whitespaces).lowercased()
+        guard trimmedKeyword.count > 0 else {
+            self.presenter?.presentEmptyData()
+            return
+        }
+        
+        worker?.doSearch(trimmedKeyword, page: page, completion: { (results, nextPage) in
+            self.presenter?.presentData(results, nextPage: nextPage)
+        })
     }
     
-    worker?.doSearch(trimmedKeyword, page: page, completion: { (results, nextPage) in
-        self.presenter?.presentData(results, nextPage: nextPage)
-    })
-  }
+    func openDetail(imdbID: String)
+    {
+        detailWorker = DetailWorker()
+        if let filmDetail = detailWorker?.fetchResultById(imdbID) {
+            self.presenter?.presentDetail(detail: filmDetail)
+        } else {
+            worker = MasterWorker()
+            worker?.fetchAFilm(imdbID, completion: { (filmDetail) in
+                if filmDetail != nil {
+                    self.presenter?.presentDetail(detail: filmDetail!)
+                } else {
+                    // no internet connection
+                }
+            })
+        }
+    }
 }

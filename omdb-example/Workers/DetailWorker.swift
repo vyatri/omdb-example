@@ -38,6 +38,8 @@ class DetailWorker
         
         DispatchQueue.global(qos: .background).async {
             
+            guard let exists: FilmDetail? = self.fetchResultById(film.imdbID) , exists == nil else { return }
+            
             let managedContext = DataManager().managedObjectContext
             
             //Now let’s create an entity and new user records.

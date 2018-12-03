@@ -13,7 +13,6 @@
         <!--Master View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="omdb_example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -199,8 +198,24 @@
                         <outlet property="searchBar" destination="dEy-vJ-Fvg" id="vYZ-fP-AiK"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="978.39999999999998" y="25.637181409295355"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="pmA-um-tAg">
+            <objects>
+                <viewController storyboardIdentifier="detailPage" id="Kru-AX-A26" customClass="DetailViewController" customModule="omdb_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QFg-1L-fSu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mmv-Ee-m6p"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgB-6V-YN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="26"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cTG-IC-egT">

@@ -34,7 +34,7 @@ class MasterWorker
                 let films = searchedFilmsWorker.fetchResultsByKeyword(keyword)
                 if films.count > 0 {
                     filmCollectors.append(contentsOf: films)
-                    if noSync == false {
+                    if noSync == false && Reachability.isConnectedToNetwork() {
                         self.saveEveryFilmDetail(films)
                     }
                 }
@@ -86,56 +86,61 @@ class MasterWorker
     
     func saveEveryFilmDetail(_ films: [Film])
     {
-        let detailWorker = DetailWorker()
-        let searchedFilmsWorker = SearchedFilmsWorker()
         
         DispatchQueue.global(qos: .background).async {
             
             for film in films {
                 
                 guard film.isDownloaded == false else { continue }
-                let parameters: Parameters = [
-                    "apikey": "58aba22c", "r": "json",
-                    "i": film.imdbID
-                ]
-                Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate()
-                    .responseJSON(completionHandler: { (response) in
-                        
-                    })
-                    .responseData { response in
-                        switch response.result {
-                        case .success:
-                            if let data = response.result.value {
-                                do {
-                                    let decoder = JSONDecoder()
-                                    let gitData = try decoder.decode(FilmDetail.self, from: data)
-                                    detailWorker.saveResult(gitData)
-                                    searchedFilmsWorker.updateAsDownloaded(film.imdbID)
-                                } catch let err {
-                                    print("Err", err)
-                                }
-                            }
-                        case .failure( _):
-                            print("network error")
-                        }
-                }
-                
+                self.fetchAFilm(film.imdbID, completion: nil)
             }
         }
     }
     
-    func saveResults(_ results: [Film], onpage: Int)
-    {
+    func fetchAFilm(_ imdbID: String, completion: ((FilmDetail?) -> Void)?) {
         
+        guard Reachability.isConnectedToNetwork() else { return }
+        
+        let detailWorker = DetailWorker()
+        let searchedFilmsWorker = SearchedFilmsWorker()
+        
+        let parameters: Parameters = [
+            "apikey": "58aba22c", "r": "json",
+            "i": imdbID
+        ]
+        Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate()
+            .responseJSON(completionHandler: { (response) in
+                
+            })
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    if let data = response.result.value {
+                        do {
+                            let decoder = JSONDecoder()
+                            let gitData = try decoder.decode(FilmDetail.self, from: data)
+                            
+                            if UserDefaults.standard.bool(forKey: "noSync") == false {
+                                detailWorker.saveResult(gitData)
+                                searchedFilmsWorker.updateAsDownloaded(imdbID)
+                            }
+                            if completion != nil {
+                                completion!(gitData)
+                            }
+                        } catch let err {
+                            print("Err", err)
+                            if completion != nil {
+                                completion!(nil)
+                            }
+                        }
+                    }
+                case .failure( _):
+                    print("network error")
+                    if completion != nil {
+                        completion!(nil)
+                    }
+                }
+        }
     }
     
-    func getLastSearchBreakpoinnt(_ keyword: String) -> History?
-    {
-        return nil
-    }
-    
-    func saveLastBreakpoint(_ history: History) -> Bool
-    {
-        return true
-    }
 }

@@ -28,6 +28,9 @@
 		B22ACBCE21B37FED0060C6C2 /* SearchedFilmsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBCD21B37FED0060C6C2 /* SearchedFilmsWorker.swift */; };
 		B22ACBD021B37FFD0060C6C2 /* HistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBCF21B37FFD0060C6C2 /* HistoryWorker.swift */; };
 		B2565F9B21B5687800CF7D9B /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2565F9A21B5687800CF7D9B /* DetailWorker.swift */; };
+		B2565F9D21B57A7100CF7D9B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2565F9C21B57A7100CF7D9B /* DetailViewController.swift */; };
+		B2565F9F21B57AD900CF7D9B /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2565F9E21B57AD900CF7D9B /* DetailInteractor.swift */; };
+		B2565FA121B57B6900CF7D9B /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2565FA021B57B6900CF7D9B /* DetailRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		B22ACBCD21B37FED0060C6C2 /* SearchedFilmsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedFilmsWorker.swift; sourceTree = "<group>"; };
 		B22ACBCF21B37FFD0060C6C2 /* HistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWorker.swift; sourceTree = "<group>"; };
 		B2565F9A21B5687800CF7D9B /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		B2565F9C21B57A7100CF7D9B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B2565F9E21B57AD900CF7D9B /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		B2565FA021B57B6900CF7D9B /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				B22ACB8F21B23DB40060C6C2 /* MasterViewController.swift */,
+				B2565F9C21B57A7100CF7D9B /* DetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B22ACB9521B24F520060C6C2 /* MasterInteractor.swift */,
+				B2565F9E21B57AD900CF7D9B /* DetailInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				B22ACBB121B2861E0060C6C2 /* MasterRouter.swift */,
+				B2565FA021B57B6900CF7D9B /* DetailRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -344,10 +353,13 @@
 				B22ACB9C21B26C050060C6C2 /* Film.swift in Sources */,
 				B22ACBC721B35C2B0060C6C2 /* FilmDetail.swift in Sources */,
 				B22ACBCC21B3718F0060C6C2 /* DataManager.swift in Sources */,
+				B2565FA121B57B6900CF7D9B /* DetailRouter.swift in Sources */,
 				B22ACB9F21B27B2A0060C6C2 /* MasterWorker.swift in Sources */,
 				B22ACBA221B27BF10060C6C2 /* History.swift in Sources */,
+				B2565F9F21B57AD900CF7D9B /* DetailInteractor.swift in Sources */,
 				B22ACBC521B357CC0060C6C2 /* UICollectionView+Extensions.swift in Sources */,
 				B22ACB9921B26B960060C6C2 /* MasterPresenter.swift in Sources */,
+				B2565F9D21B57A7100CF7D9B /* DetailViewController.swift in Sources */,
 				B22ACB9621B24F520060C6C2 /* MasterInteractor.swift in Sources */,
 				B22ACBD021B37FFD0060C6C2 /* HistoryWorker.swift in Sources */,
 				B22ACBB221B2861E0060C6C2 /* MasterRouter.swift in Sources */,

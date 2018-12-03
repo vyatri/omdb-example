@@ -80,8 +80,8 @@ class SearchedFilmsWorker
             for data in result as! [NSManagedObject] {
                 record = data
                 record.setValue(true, forKey: "isDownloaded_")
-                try managedContext.save()
             }
+            try managedContext.save()
         } catch let error as NSError  {
             print("Could not update old data or not exists. \(error), \(error.userInfo)")
         }

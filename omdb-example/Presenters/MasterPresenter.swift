@@ -16,6 +16,7 @@ protocol MasterPresentationLogic
 {
     func presentData(_ results: FilmList?, nextPage: Int)
     func presentEmptyData()
+    func presentDetail(detail: FilmDetail)
 }
 
 class MasterPresenter: MasterPresentationLogic
@@ -28,5 +29,9 @@ class MasterPresenter: MasterPresentationLogic
     
     func presentEmptyData() {
         viewController?.clearDisplay()
+    }
+    
+    func presentDetail(detail: FilmDetail) {
+        viewController?.openDetail(detail)
     }
 }
