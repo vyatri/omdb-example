@@ -28,6 +28,7 @@
     <entity name="SearchedFilms" representedClassName="SearchedFilms" syncable="YES" codeGenerationType="class">
         <attribute name="category_" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imdbID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isDownloaded_" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="keyword_" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="poster_" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title_" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,7 +40,7 @@
     </entity>
     <elements>
         <element name="Films" positionX="-63" positionY="-18" width="128" height="390"/>
-        <element name="SearchedFilms" positionX="-54" positionY="144" width="128" height="135"/>
+        <element name="SearchedFilms" positionX="-54" positionY="144" width="128" height="150"/>
         <element name="SearchHistory" positionX="-36" positionY="153" width="128" height="75"/>
     </elements>
 </model>
