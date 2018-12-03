@@ -23,6 +23,7 @@ class MasterWorker
         let historyWorker = HistoryWorker()
         let searchedFilmsWorker = SearchedFilmsWorker()
         var pageToSearch = page
+        let noSync = UserDefaults.standard.bool(forKey: "noSync")
         
         var filmCollectors = [Film]()
         
@@ -33,6 +34,9 @@ class MasterWorker
                 let films = searchedFilmsWorker.fetchResultsByKeyword(keyword)
                 if films.count > 0 {
                     filmCollectors.append(contentsOf: films)
+                    if noSync == false {
+                        self.saveEveryFilmDetail(films)
+                    }
                 }
                 pageToSearch = existingHistory!.lastPage + 1
             }
@@ -60,9 +64,10 @@ class MasterWorker
                         let decoder = JSONDecoder()
                         let gitData = try decoder.decode(FilmList.self, from: data)
                         
-                        if UserDefaults.standard.bool(forKey: "noSync") == false {
+                        if noSync == false {
                             historyWorker.saveHistory(History(keyword: keyword, lastPage: pageToSearch))
                             searchedFilmsWorker.saveResults(gitData.Search, keyword: keyword)
+                            self.saveEveryFilmDetail(gitData.Search)
                         }
                         
                         filmCollectors.append(contentsOf: gitData.Search)
@@ -79,10 +84,44 @@ class MasterWorker
         }
     }
     
-    func getSearchResultsFromDB(_ keyword: String) -> [Film]
+    func saveEveryFilmDetail(_ films: [Film])
     {
+        let detailWorker = DetailWorker()
+        let searchedFilmsWorker = SearchedFilmsWorker()
         
-        return []
+        DispatchQueue.global(qos: .background).async {
+            
+            for film in films {
+                
+                guard film.isDownloaded == false else { continue }
+                let parameters: Parameters = [
+                    "apikey": "58aba22c", "r": "json",
+                    "i": film.imdbID
+                ]
+                Alamofire.request("https://www.omdbapi.com/", parameters: parameters).validate()
+                    .responseJSON(completionHandler: { (response) in
+                        
+                    })
+                    .responseData { response in
+                        switch response.result {
+                        case .success:
+                            if let data = response.result.value {
+                                do {
+                                    let decoder = JSONDecoder()
+                                    let gitData = try decoder.decode(FilmDetail.self, from: data)
+                                    detailWorker.saveResult(gitData)
+                                    searchedFilmsWorker.updateAsDownloaded(film.imdbID)
+                                } catch let err {
+                                    print("Err", err)
+                                }
+                            }
+                        case .failure( _):
+                            print("network error")
+                        }
+                }
+                
+            }
+        }
     }
     
     func saveResults(_ results: [Film], onpage: Int)

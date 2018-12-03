@@ -53,6 +53,7 @@ class SearchedFilmsWorker
                 newRow.setValue(film.Year, forKey: "year_")
                 newRow.setValue(film.Category.rawValue, forKey: "category_")
                 newRow.setValue(film.Poster, forKey: "poster_")
+                newRow.setValue(false, forKey: "isDownloaded_")
             }
             
             do {
@@ -63,5 +64,28 @@ class SearchedFilmsWorker
             }
             managedContext.reset()
         }
+    }
+    
+    func updateAsDownloaded(_ imdbID: String) {
+        
+        //We need to create a context from this container
+        let managedContext = DataManager().managedObjectContext
+        
+        //Prepare the request of type NSFetchRequest  for the entity
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SearchedFilms")
+        fetchRequest.predicate = NSPredicate(format: "keyword_ = %@", imdbID)
+        var record:NSManagedObject
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                record = data
+                record.setValue(true, forKey: "isDownloaded_")
+                try managedContext.save()
+            }
+        } catch let error as NSError  {
+            print("Could not update old data or not exists. \(error), \(error.userInfo)")
+        }
+        managedContext.reset()
+        
     }
 }

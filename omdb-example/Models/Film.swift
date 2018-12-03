@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 import CoreData
 
 enum CategoryOption : String, Codable {
@@ -17,12 +16,13 @@ enum CategoryOption : String, Codable {
     case game = "game"
 }
 
-struct Film: Codable {
+class Film: NSObject, Codable {
     let imdbID: String
     let Title: String
     let Year: String
     let Category: CategoryOption
     let Poster: String
+    var isDownloaded: Bool = false
     
     private enum CodingKeys: String, CodingKey {
         case imdbID
@@ -38,6 +38,7 @@ struct Film: Codable {
         self.Year = data.value(forKey: "year_") as! String
         self.Category = CategoryOption(rawValue: data.value(forKey: "category_") as! String)!
         self.Poster = data.value(forKey: "poster_") as! String
+        self.isDownloaded = data.value(forKey: "isDownloaded_") as! Bool
     }
 }
 

@@ -11,7 +11,7 @@ import CoreData
 
 class DetailWorker
 {
-    func fetchResultById(_ imdbID: String) -> FilmDetail
+    func fetchResultById(_ imdbID: String) -> FilmDetail?
     {
         //We need to create a context from this container
         let managedContext = DataManager().managedObjectContext
@@ -22,7 +22,7 @@ class DetailWorker
         
         do {
             let result = try managedContext.fetch(fetchRequest)
-            var filmDetail: FilmDetail
+            var filmDetail: FilmDetail?
             for data in result as! [NSManagedObject] {
                 filmDetail = FilmDetail(data: data)
             }
@@ -34,9 +34,7 @@ class DetailWorker
         }
     }
     
-    func saveResult(_ film: FilmDetail, keyword: String) {
-        
-        guard keyword.count > 0 else { return }
+    func saveResult(_ film: FilmDetail) {
         
         DispatchQueue.global(qos: .background).async {
             
@@ -58,7 +56,7 @@ class DetailWorker
             newRow.setValue(film.imdbRating, forKey: "imdbRating_")
             newRow.setValue(film.imdbVotes, forKey: "imdbVotes_")
             newRow.setValue(film.imdbID, forKey: "imdbID")
-            newRow.setValue(film.Type, forKey: "type_")
+            newRow.setValue(film.Category, forKey: "type_")
             
             do {
                 try managedContext.save()

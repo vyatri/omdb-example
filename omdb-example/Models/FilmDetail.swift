@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import UIKit
+import CoreData
 
-struct FilmDetail: Codable {
+class FilmDetail: Codable {
     let Title: String
     let Year: String
     let Genre: String
@@ -22,7 +22,7 @@ struct FilmDetail: Codable {
     let imdbRating: String
     let imdbVotes: String
     let imdbID: String
-    let Type: String
+    let Category: String
     
     private enum CodingKeys: String, CodingKey {
         case Title
@@ -37,7 +37,7 @@ struct FilmDetail: Codable {
         case imdbRating
         case imdbVotes
         case imdbID
-        case Type
+        case Category = "Type"
     }
     
     init(data: NSManagedObject) {
@@ -53,6 +53,6 @@ struct FilmDetail: Codable {
         self.imdbRating = data.value(forKey: "imdbRating_") as! String
         self.imdbVotes = data.value(forKey: "imdbVotes_") as! String
         self.imdbID = data.value(forKey: "imdbID") as! String
-        self.Type = data.value(forKey: "type_") as! String
+        self.Category = data.value(forKey: "type_") as! String
     }
 }
