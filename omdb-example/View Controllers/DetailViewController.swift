@@ -75,7 +75,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic
         filmDetail = (router?.dataStore?.filmDetail)!
         if (filmDetail.Poster != "N/A") {
             imageView.kf.setImage(with: URL(string: filmDetail.Poster))
-            titleLabel.text = filmDetail.Title
+            titleLabel.text = "\(filmDetail.Title) (\(filmDetail.Year))"
             ratingLabel.text = "⭐️ \(filmDetail.imdbRating) (\(filmDetail.imdbVotes) votes)"
             writerLabel.text = "Written by \(filmDetail.Writer)"
             directorLabel.text = "Directed by \(filmDetail.Director)"
