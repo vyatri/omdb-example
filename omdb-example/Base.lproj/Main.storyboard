@@ -393,6 +393,16 @@
                         <viewLayoutGuide key="safeArea" id="mmv-Ee-m6p"/>
                     </view>
                     <navigationItem key="navigationItem" id="bDU-7Y-Zsb"/>
+                    <connections>
+                        <outlet property="actorLabel" destination="sCI-zf-K4p" id="cQH-GW-nbL"/>
+                        <outlet property="directorLabel" destination="TsS-G5-wEJ" id="gUv-c7-alv"/>
+                        <outlet property="genreLabel" destination="5gX-eC-Xag" id="cvO-WW-MqC"/>
+                        <outlet property="imageView" destination="SXu-AN-OGN" id="LGw-dS-iM0"/>
+                        <outlet property="plotLabel" destination="LcE-3j-UFX" id="E6N-QI-QP4"/>
+                        <outlet property="ratingLabel" destination="gpn-I2-qzy" id="eIa-Ct-tkW"/>
+                        <outlet property="titleLabel" destination="UYU-My-Dmz" id="YYc-ZE-o0z"/>
+                        <outlet property="writerLabel" destination="8Xf-75-0mr" id="WkZ-tO-iBX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgB-6V-YN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

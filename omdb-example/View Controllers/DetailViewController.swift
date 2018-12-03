@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol DetailDisplayLogic: class
 {
@@ -60,10 +61,28 @@ class DetailViewController: UIViewController, DetailDisplayLogic
     // MARK: Do something
     
     var filmDetail: FilmDetail!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var writerLabel: UILabel!
+    @IBOutlet weak var directorLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var plotLabel: UILabel!
+    @IBOutlet weak var actorLabel: UILabel!
     
     func doDisplay()
     {
         filmDetail = (router?.dataStore?.filmDetail)!
+        if (filmDetail.Poster != "N/A") {
+            imageView.kf.setImage(with: URL(string: filmDetail.Poster))
+            titleLabel.text = filmDetail.Title
+            ratingLabel.text = "⭐️ \(filmDetail.imdbRating) (\(filmDetail.imdbVotes) votes)"
+            writerLabel.text = "Written by \(filmDetail.Writer)"
+            directorLabel.text = "Directed by \(filmDetail.Director)"
+            genreLabel.text = "Genre: \(filmDetail.Genre)"
+            plotLabel.text = filmDetail.Plot
+            actorLabel.text = "Actors: \(filmDetail.Actors)"
+        }
     }
     
 }
