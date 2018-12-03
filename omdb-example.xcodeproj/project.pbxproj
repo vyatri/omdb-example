@@ -27,6 +27,7 @@
 		B22ACBCC21B3718F0060C6C2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBCB21B3718F0060C6C2 /* DataManager.swift */; };
 		B22ACBCE21B37FED0060C6C2 /* SearchedFilmsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBCD21B37FED0060C6C2 /* SearchedFilmsWorker.swift */; };
 		B22ACBD021B37FFD0060C6C2 /* HistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22ACBCF21B37FFD0060C6C2 /* HistoryWorker.swift */; };
+		B2565F9B21B5687800CF7D9B /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2565F9A21B5687800CF7D9B /* DetailWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		B22ACBCB21B3718F0060C6C2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B22ACBCD21B37FED0060C6C2 /* SearchedFilmsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedFilmsWorker.swift; sourceTree = "<group>"; };
 		B22ACBCF21B37FFD0060C6C2 /* HistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWorker.swift; sourceTree = "<group>"; };
+		B2565F9A21B5687800CF7D9B /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
 		C7689CA4E5CD7C08CB2B232E /* Pods_omdb_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				B22ACB9E21B27B2A0060C6C2 /* MasterWorker.swift */,
 				B22ACBCD21B37FED0060C6C2 /* SearchedFilmsWorker.swift */,
 				B22ACBCF21B37FFD0060C6C2 /* HistoryWorker.swift */,
+				B2565F9A21B5687800CF7D9B /* DetailWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				B22ACBA521B282450060C6C2 /* Reachability.swift in Sources */,
 				B22ACBCA21B36D560060C6C2 /* Model.xcdatamodeld in Sources */,
 				B22ACB9021B23DB40060C6C2 /* MasterViewController.swift in Sources */,
+				B2565F9B21B5687800CF7D9B /* DetailWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
